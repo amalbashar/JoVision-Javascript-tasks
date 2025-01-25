@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task4</title>
+</head>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        
+    }
+
+    button {
+        background: #7a6ad8; 
+        color: #fff;
+        border-radius: 25px; 
+        padding: 15px 30px; 
+        font-size: 18px;
+        cursor: pointer; 
+    }
+
+    button:hover {
+        background: #6c5cd1;
+    }
+
+  
+</style>
+<body>
+    <button id="array">Click me</button>
+    <script>
+        const button = document.getElementById('array');
+
+        button.addEventListener('click', function () {
+            const numbers = [];
+            for (let i = 0; i <= 100; i++) {
+                numbers.push(i);
+            }
+
+            const sum = numbers.reduce((total, num) => total + num, 0);
+
+            console.log("Array of numbers from 0 to 100:",numbers, "The sum of  array's numbers :", sum);
+        });
+    </script>
+</body>
+</html>
