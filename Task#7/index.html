@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task7</title>
+    <style>
+       body {
+        display: flex;
+        justify-content: center;
+        
+    }
+
+    button {
+        background: #7a6ad8; 
+        color: #fff;
+        border-radius: 25px; 
+        padding: 15px 30px; 
+        font-size: 18px;
+        cursor: pointer; 
+    }
+
+    button:hover {
+        background: #6c5cd1;
+    }
+    </style>
+</head>
+<body>
+
+    <button id="clock">--:--:--</button>
+
+    <script>
+        function update() {
+            const now = new Date();
+            let hours = now.getHours().toString().padStart(2, '0');
+            let minutes = now.getMinutes().toString().padStart(2, '0');
+            let seconds = now.getSeconds().toString().padStart(2, '0');
+            
+            document.getElementById("clock").textContent = `${hours}:${minutes}:${seconds}`;
+        }
+
+        setInterval(update, 1000);
+
+        update();
+    </script>
+
+</body>
+</html>
