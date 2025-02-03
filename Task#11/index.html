@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task9</title>
+</head>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        
+    }
+
+    button {
+        background: #7a6ad8; 
+        color: #fff;
+        border-radius: 25px; 
+        padding: 15px 30px; 
+        font-size: 18px;
+        cursor: pointer; 
+    }
+
+    button:hover {
+        background: #6c5cd1;
+    }
+
+  
+</style>
+<body>
+    <button id="hello">Get IP</button>
+    <script>
+        document.getElementById('hello').addEventListener('click', function () {
+            // fetch('https://api.ipify.org?format=json')
+            fetch('https://api.ipify')
+        .then(response => response.json()) 
+        .then(data => {
+            document.getElementById('hello').textContent = data.ip;
+                })
+                .catch(error => {
+                    alert("Error fetching IP: " + error.message);
+                });
+        });
+    </script>
+</body>
+</html>

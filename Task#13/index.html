@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task13</title>
+</head>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    button {
+        background: #7a6ad8; 
+        color: #fff;
+        border-radius: 25px; 
+        padding: 15px 30px; 
+        font-size: 18px;
+        cursor: pointer; 
+    }
+
+    button:hover {
+        background: #6c5cd1;
+    }
+
+    input {
+        margin: 10px;
+        padding: 10px;
+    }
+</style>
+<body>
+    <input type="text" id="name" placeholder="Name" title="Name">
+    <button id="hello">Submit</button>
+    <script>
+        document.getElementById('hello').addEventListener('click', function () {
+            const name = document.getElementById('name').value;
+
+            if (!name) {
+                alert(" enter a name");
+                return;
+            }
+
+            fetch(`https://api.agify.io?name=${name}`)
+                .then(response => response.json()) 
+                .then(data => {
+                    const age = data.age; 
+                    alert(`Your name is: ${name} \n Your age is: ${age}`); 
+                })
+               ;
+        });
+    </script>
+</body>
+</html>
