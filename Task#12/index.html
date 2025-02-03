@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task9</title>
+</head>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+
+        
+    }
+
+    button
+     {
+        background: #7a6ad8; 
+        color: #fff;
+        border-radius: 25px; 
+        padding: 15px 30px; 
+        font-size: 18px;
+        cursor: pointer; 
+    }
+
+    button:hover {
+        background: #6c5cd1;
+    }
+ 
+
+    input{
+        margin: 10px;
+        padding: 10px;
+    }
+
+  
+</style>
+<body>
+    <input type="text" id="name" placeholder="Name" title="Name">
+    <input type="number" id="age" placeholder="Age" title="Age">
+    <button id="hello">Submit</button>
+    <script>
+        document.getElementById('hello').addEventListener('click', function () {
+            const name = document.getElementById('name').value;
+            const age = document.getElementById('age').value;
+            const timestamp = new Date().toLocaleString();
+            
+            const info = {
+                name: name,
+                age: age,
+                timestamp: timestamp
+            };
+            
+            alert(`Your name is: ${info.name}\nYour age is: ${info.age} \n Timestamp: ${info.timestamp}`);
+        });
+    </script>
+</body>
+</html>
